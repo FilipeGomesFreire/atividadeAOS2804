@@ -3,7 +3,17 @@ atividade da disciplina Aplicações Orientadas a Serviço com vencimento até o
 
 
 Liana: criou o projeto, fez todos os models e repositorys
-Filipe: fez todos os services e controllers, ajustou Readme mostrando os endpoints
+
+Filipe: fez todos os services e controllers, ajustou Readme mostrando os endpoints, o projeto ja ta funcionando pelo codespace, tive q adicionar algumas cooisa pra ele funcionar pq ta com algum problema no banco de dados. ele ta funcionando com H2 ou seja,
+
+ tem q deletar do pom.xml isso de baixo e ajustar o aplication.propries pra ele ficar online
+
+<dependency>
+    <groupId>com.h2database</groupId>
+    <artifactId>h2</artifactId>
+    <scope>runtime</scope>
+</dependency>
+
 
 nada ta online ainda, então isso precisa ser ajustado
 o aplication.propries ja ta com os dados do banco de dados
