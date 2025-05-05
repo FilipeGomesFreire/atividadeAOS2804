@@ -31,7 +31,7 @@ public class ResponsavelController {
     }
 
     // POST /responsaveis
-    @PostMapping
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public Responsavel criarResponsavel(@RequestBody Responsavel responsavel) {
         return responsavelService.criarResponsavel(responsavel);
     }

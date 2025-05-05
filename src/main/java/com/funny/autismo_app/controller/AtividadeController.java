@@ -31,7 +31,7 @@ public class AtividadeController {
     }
 
     // POST /atividades
-    @PostMapping
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public Atividade criarAtividade(@RequestBody Atividade atividade) {
         return atividadeService.criarAtividade(atividade);
     }

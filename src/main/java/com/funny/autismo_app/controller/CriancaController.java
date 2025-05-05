@@ -31,7 +31,7 @@ public class CriancaController {
     }
 
     // POST /criancas
-    @PostMapping
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public Crianca criarCrianca(@RequestBody Crianca crianca) {
         return criancaService.criarCrianca(crianca);
     }
