@@ -40,9 +40,9 @@ public class AtividadeController {
     @PutMapping("/{id}")
     public ResponseEntity<Atividade> atualizarAtividade(@PathVariable Long id, @RequestBody Atividade atividade) {
         return AtividadeRepository.findBy(id).map(atividade -> {
-            atividade.setCategoria(novaCategoria.getCategoria));
-            atividade.setTitulo(novoTitulo).getTitulo));
-            atividade.setDescricao(novaDescricao).getDescricao));
+            atividade.setCategoria(novaCategoria.getCategoria);
+            atividade.setTitulo(novoTitulo).getTitulo);
+            atividade.setDescricao(novaDescricao).getDescricao);
             atividdade.setNivelDificuldade(novaDificuldade).getNivelDificuldade);
         })orElse(null);
         try {
