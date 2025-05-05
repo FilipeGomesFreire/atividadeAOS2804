@@ -13,7 +13,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/atividades",
+					"raw": "https://test-t1iw.onrender.com/atividades",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -41,7 +41,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/atividades",
+					"raw": "https://test-t1iw.onrender.com/atividades",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -60,7 +60,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/atividades/1",
+					"raw": "https://test-t1iw.onrender.com/atividades/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -89,7 +89,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/atividades/1",
+					"raw": "https://test-t1iw.onrender.com/atividades/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -109,7 +109,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/atividades/2",
+					"raw": "https://test-t1iw.onrender.com/atividades/2",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -129,7 +129,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/criancas",
+					"raw": "https://test-t1iw.onrender.com/criancas",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -157,7 +157,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/criancas",
+					"raw": "https://test-t1iw.onrender.com/criancas",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -176,7 +176,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/criancas/1",
+					"raw": "https://test-t1iw.onrender.com/criancas/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -208,7 +208,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/criancas/1",
+					"raw": "https://test-t1iw.onrender.com/criancas/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -228,7 +228,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/criancas/2",
+					"raw": "https://test-t1iw.onrender.com/criancas/2",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -248,7 +248,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/diagnosticos",
+					"raw": "https://test-t1iw.onrender.com/diagnosticos",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -276,7 +276,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/diagnosticos",
+					"raw": "https://test-t1iw.onrender.com/diagnosticos",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -295,7 +295,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/diagnosticos/3",
+					"raw": "https://test-t1iw.onrender.com/diagnosticos/3",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -324,7 +324,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/diagnosticos/3",
+					"raw": "https://test-t1iw.onrender.com/diagnosticos/3",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -344,7 +344,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/diagnosticos/3",
+					"raw": "https://test-t1iw.onrender.com/diagnosticos/3",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -373,7 +373,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/progresso/registrar",
+					"raw": "https://test-t1iw.onrender.com/progresso/registrar",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -393,7 +393,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/progresso/crianca/1",
+					"raw": "https://test-t1iw.onrender.com/progresso/crianca/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -414,7 +414,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/progresso/atividade/1",
+					"raw": "https://test-t1iw.onrender.com/progresso/atividade/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -435,7 +435,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/progresso/crianca/1/resumo",
+					"raw": "https://test-t1iw.onrender.com/progresso/crianca/1/resumo",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -457,7 +457,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/responsaveis",
+					"raw": "https://test-t1iw.onrender.com/responsaveis",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -476,7 +476,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/responsaveis/1",
+					"raw": "https://test-t1iw.onrender.com/responsaveis/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -505,7 +505,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/responsaveis",
+					"raw": "https://test-t1iw.onrender.com/responsaveis",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -533,7 +533,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/responsaveis/3",
+					"raw": "https://test-t1iw.onrender.com/responsaveis/3",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -553,7 +553,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/responsaveis/2",
+					"raw": "https://test-t1iw.onrender.com/responsaveis/2",
 					"protocol": "http",
 					"host": [
 						"localhost"
