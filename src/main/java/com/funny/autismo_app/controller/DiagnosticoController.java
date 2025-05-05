@@ -31,7 +31,7 @@ public class DiagnosticoController {
     }
 
     // POST /diagnosticos
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping
     public Diagnostico criarDiagnostico(@RequestBody Diagnostico diagnostico) {
         return diagnosticoService.criarDiagnostico(diagnostico);
     }
