@@ -43,8 +43,7 @@ public class AtividadeController {
             atividade.setCategoria(novaCategoria.getCategoria));
             atividade.setTitulo(novoTitulo).getTitulo));
             atividade.setDescricao(novaDescricao).getDescricao));
-            atividdade.setNivelDificuldade(novaDificuldade).getNivelDificuldade));
-            atividade.criancas(novaCrianca));
+            atividdade.setNivelDificuldade(novaDificuldade).getNivelDificuldade);
         })orElse(null);
         try {
             Atividade atualizada = atividadeService.atualizarAtividade(id, atividade);
