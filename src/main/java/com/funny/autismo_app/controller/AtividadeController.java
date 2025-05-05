@@ -1,6 +1,7 @@
 package com.funny.autismo_app.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +11,7 @@ import com.funny.autismo_app.model.Atividade;
 import com.funny.autismo_app.service.AtividadeService;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/atividades")
 public class AtividadeController {
 
@@ -30,10 +32,21 @@ public class AtividadeController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    // POST /atividades
+    // POST /atividades (manual para evitar erro 415)
     @PostMapping
-    public Atividade criarAtividade(@RequestBody Atividade atividade) {
-        return atividadeService.criarAtividade(atividade);
+    public ResponseEntity<?> criarAtividade(@RequestBody Map<String, Object> dados) {
+        try {
+            Atividade atividade = new Atividade();
+            atividade.setTitulo((String) dados.get("titulo"));
+            atividade.setDescricao((String) dados.get("descricao"));
+            atividade.setCategoria((String) dados.get("categoria"));
+            atividade.setNivelDificuldade((int) dados.get("nivelDificuldade"));
+
+            Atividade salva = atividadeService.criarAtividade(atividade);
+            return ResponseEntity.ok(salva);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body("Erro ao criar atividade: " + e.getMessage());
+        }
     }
 
     // PUT /atividades/{id}
