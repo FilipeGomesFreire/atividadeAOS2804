@@ -2,12 +2,13 @@ package com.funny.autismo_app.model;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-
 
 @Entity
 public class Responsavel {
@@ -18,7 +19,9 @@ public class Responsavel {
     private String nome;
     private String email;
     private String telefone;
-
+    
+    // Evita a serialização recursiva de criancas
+    @JsonBackReference
     @OneToMany(mappedBy = "responsavel")
     private List<Crianca> criancas;
 

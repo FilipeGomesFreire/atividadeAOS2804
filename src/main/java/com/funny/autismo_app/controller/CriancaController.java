@@ -1,15 +1,19 @@
 package com.funny.autismo_app.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.funny.autismo_app.model.Crianca;
+import com.funny.autismo_app.model.Diagnostico;
+import com.funny.autismo_app.model.Responsavel;
 import com.funny.autismo_app.service.CriancaService;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/criancas")
 public class CriancaController {
 
@@ -30,20 +34,59 @@ public class CriancaController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    // POST /criancas
+    // POST /criancas com responsavelId e diagnosticoId
     @PostMapping
-    public Crianca criarCrianca(@RequestBody Crianca crianca) {
-        return criancaService.criarCrianca(crianca);
+    public ResponseEntity<?> criarCrianca(@RequestBody Map<String, Object> dados) {
+        try {
+            Crianca crianca = new Crianca();
+            crianca.setNome((String) dados.get("nome"));
+            crianca.setIdade((int) dados.get("idade"));
+
+            if (dados.containsKey("responsavelId")) {
+                Responsavel resp = new Responsavel();
+                resp.setId(Long.parseLong(dados.get("responsavelId").toString()));
+                crianca.setResponsavel(resp);
+            }
+
+            if (dados.containsKey("diagnosticoId")) {
+                Diagnostico diag = new Diagnostico();
+                diag.setId(Long.parseLong(dados.get("diagnosticoId").toString()));
+                crianca.setDiagnostico(diag);
+            }
+
+            Crianca salva = criancaService.criarCrianca(crianca);
+            return ResponseEntity.ok(salva);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body("Erro ao criar criança: " + e.getMessage());
+        }
     }
 
-    // PUT /criancas/{id}
+    // PUT /criancas/{id} com responsavelId e diagnosticoId
     @PutMapping("/{id}")
-    public ResponseEntity<Crianca> atualizarCrianca(@PathVariable Long id, @RequestBody Crianca crianca) {
+    public ResponseEntity<?> atualizarCrianca(@PathVariable Long id, @RequestBody Map<String, Object> dados) {
         try {
+            Crianca crianca = new Crianca();
+            crianca.setNome((String) dados.get("nome"));
+            crianca.setIdade((int) dados.get("idade"));
+
+            if (dados.containsKey("responsavelId")) {
+                Responsavel resp = new Responsavel();
+                resp.setId(Long.parseLong(dados.get("responsavelId").toString()));
+                crianca.setResponsavel(resp);
+            }
+
+            if (dados.containsKey("diagnosticoId")) {
+                Diagnostico diag = new Diagnostico();
+                diag.setId(Long.parseLong(dados.get("diagnosticoId").toString()));
+                crianca.setDiagnostico(diag);
+            }
+
             Crianca atualizada = criancaService.atualizarCrianca(id, crianca);
             return ResponseEntity.ok(atualizada);
         } catch (RuntimeException e) {
             return ResponseEntity.notFound().build();
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body("Erro ao atualizar criança: " + e.getMessage());
         }
     }
 

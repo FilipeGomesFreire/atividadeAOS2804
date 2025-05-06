@@ -2,6 +2,8 @@ package com.funny.autismo_app.model;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,10 +24,12 @@ public class Crianca {
 
     @ManyToOne
     @JoinColumn(name = "responsavel_id")
+    @JsonManagedReference  // Serializa a relação para "responsavel"
     private Responsavel responsavel;
 
     @ManyToOne
     @JoinColumn(name = "diagnostico_id")
+    @JsonManagedReference  // Serializa a relação para "diagnostico"
     private Diagnostico diagnostico;
 
     @ManyToMany
@@ -34,8 +38,9 @@ public class Crianca {
         joinColumns = @JoinColumn(name = "crianca_id"),
         inverseJoinColumns = @JoinColumn(name = "atividade_id")
     )
+    @JsonManagedReference  // Serializa a relação para "atividades"
     private List<Atividade> atividades;
-
+    
     public Long getId() {
         return id;
     }

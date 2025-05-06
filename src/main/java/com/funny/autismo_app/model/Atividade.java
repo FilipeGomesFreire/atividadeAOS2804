@@ -2,6 +2,8 @@ package com.funny.autismo_app.model;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -10,6 +12,7 @@ import jakarta.persistence.ManyToMany;
 
 @Entity
 public class Atividade {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -19,8 +22,10 @@ public class Atividade {
     private String categoria; // Ex: comunicação, motora, cognitiva
     private int nivelDificuldade;
 
+    @JsonBackReference
     @ManyToMany(mappedBy = "atividades")
-    private List<Crianca> criancas;
+    private List<Crianca> criancas; // pode ser null ou vazio na criação
+
 
     // Getters e Setters
     public Long getId() {

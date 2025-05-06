@@ -2,6 +2,8 @@ package com.funny.autismo_app.model;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,6 +18,8 @@ public class Diagnostico {
 
     private String tipo; // Ex: Leve, Moderado, Severo
 
+    // Evita a serialização recursiva de criancas
+    @JsonBackReference
     @OneToMany(mappedBy = "diagnostico")
     private List<Crianca> criancas;
 

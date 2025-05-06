@@ -2,6 +2,8 @@ package com.funny.autismo_app.model;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,15 +16,19 @@ public class ProgressoAtividade {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
+    // Relacionamento com Crianca
     @ManyToOne
     @JoinColumn(name = "crianca_id")
+    @JsonBackReference  // Evita a serialização recursiva
     private Crianca crianca;
-    
+
+    // Relacionamento com Atividade
     @ManyToOne
     @JoinColumn(name = "atividade_id")
+    @JsonBackReference  // Evita a serialização recursiva
     private Atividade atividade;
-    
+
     private LocalDate data;
     private int pontuacao; // 1-5
     private String observacoes;

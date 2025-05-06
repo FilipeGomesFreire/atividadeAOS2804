@@ -1,6 +1,7 @@
 package com.funny.autismo_app.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +11,7 @@ import com.funny.autismo_app.model.Diagnostico;
 import com.funny.autismo_app.service.DiagnosticoService;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/diagnosticos")
 public class DiagnosticoController {
 
@@ -30,10 +32,18 @@ public class DiagnosticoController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    // POST /diagnosticos
+    // POST /diagnosticos (corrigido)
     @PostMapping
-    public Diagnostico criarDiagnostico(@RequestBody Diagnostico diagnostico) {
-        return diagnosticoService.criarDiagnostico(diagnostico);
+    public ResponseEntity<?> criarDiagnostico(@RequestBody Map<String, Object> dados) {
+        try {
+            Diagnostico diagnostico = new Diagnostico();
+            diagnostico.setTipo((String) dados.get("tipo"));  // campo correto
+
+            Diagnostico salvo = diagnosticoService.criarDiagnostico(diagnostico);
+            return ResponseEntity.ok(salvo);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body("Erro ao criar diagnóstico: " + e.getMessage());
+        }
     }
 
     // PUT /diagnosticos/{id}

@@ -1,13 +1,12 @@
 package com.funny.autismo_app.service;
 
-import java.util.List;
-import java.util.Optional;
-
+import com.funny.autismo_app.model.Atividade;
+import com.funny.autismo_app.repository.AtividadeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.funny.autismo_app.model.Atividade;
-import com.funny.autismo_app.repository.AtividadeRepository;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AtividadeService {
@@ -20,7 +19,7 @@ public class AtividadeService {
         return atividadeRepository.findAll();
     }
 
-    // Busca atividade pelo ID
+    // Busca uma atividade pelo ID
     public Optional<Atividade> buscarPorId(Long id) {
         return atividadeRepository.findById(id);
     }
@@ -30,18 +29,18 @@ public class AtividadeService {
         return atividadeRepository.save(atividade);
     }
 
-    // Atualiza atividade existente
-    public Atividade atualizarAtividade(Long id, Atividade atividadeAtualizada) {
+    // Atualiza uma atividade existente
+    public Atividade atualizarAtividade(Long id, Atividade novaAtividade) {
         return atividadeRepository.findById(id).map(atividade -> {
-            atividade.setTitulo(atividadeAtualizada.getTitulo());
-            atividade.setDescricao(atividadeAtualizada.getDescricao());
-            atividade.setCategoria(atividadeAtualizada.getCategoria());
-            atividade.setNivelDificuldade(atividadeAtualizada.getNivelDificuldade());
+            atividade.setTitulo(novaAtividade.getTitulo());
+            atividade.setDescricao(novaAtividade.getDescricao());
+            atividade.setCategoria(novaAtividade.getCategoria());
+            atividade.setNivelDificuldade(novaAtividade.getNivelDificuldade());
             return atividadeRepository.save(atividade);
-        }).orElseThrow(() -> new RuntimeException("Atividade não encontrada com o id: " + id));
+        }).orElseThrow(() -> new RuntimeException("Atividade não encontrada com id: " + id));
     }
 
-    // Deleta atividade pelo ID
+    // Deleta uma atividade pelo ID
     public void deletarAtividade(Long id) {
         atividadeRepository.deleteById(id);
     }
